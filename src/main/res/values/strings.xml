@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HomeworkFourApp</string>
+    <string name="title_activity_display_location">Map</string>
+    <string name="enter_address">Enter A Location</string>
+    <string name="go_button">Go</string>
+    <string name="zoomI">-</string>
+    <string name="zoomO">+</string>
+
+</resources>

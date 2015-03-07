@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <EditText android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_address"
+            android:imeOptions="actionDone"
+            android:layout_alignParentTop="true"/>
+
+        <Button android:id="@+id/submitLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/go_button"
+            android:onClick="onClick"
+            android:layout_toEndOf="@id/editText"
+            android:layout_toRightOf="@id/editText"
+            android:layout_above="@+id/map"/>
+
+        <Button android:id="@+id/zoomIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/zoomI"
+            android:onClick="zoomIn"
+            android:layout_toEndOf="@id/submitLocation"
+            android:layout_toRightOf="@id/submitLocation"
+            android:layout_above="@+id/map"/>
+
+        <Button android:id="@+id/zoomOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/zoomO"
+            android:onClick="zoomOut"
+            android:layout_toEndOf="@id/zoomIn"
+            android:layout_toRightOf="@id/zoomIn"
+            android:layout_above="@+id/map"/>
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/map"
+            tools:context=".DisplayLocationActivity"
+            android:layout_below="@id/editText"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    </RelativeLayout>
