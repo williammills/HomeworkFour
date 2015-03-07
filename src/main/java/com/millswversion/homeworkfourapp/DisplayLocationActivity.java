@@ -159,6 +159,10 @@ public class DisplayLocationActivity extends FragmentActivity {
                 else if (locType.equals("neighborhood")){
                     zoomAmount = 18;
                 }
+                else if (locType.equals("premise")){
+                    zoomAmount = 18;
+                    scaleDisplay = "neighborhood";
+                }
                 else if (locType.equals("continent")){
                     zoomAmount = 1;
                 }
@@ -168,7 +172,7 @@ public class DisplayLocationActivity extends FragmentActivity {
                 Toast.makeText(getApplicationContext(), "Your search is on the " + scaleDisplay + " scale",
                         Toast.LENGTH_SHORT).show();
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, zoomAmount));
-                mMap.addMarker(new MarkerOptions().title("here's where you want to see").position(myLocation));
+                mMap.addMarker(new MarkerOptions().title(location).position(myLocation));
                 CameraUpdate center = CameraUpdateFactory.newLatLng(myLocation);
                 mMap.moveCamera(center);
             } catch (MalformedURLException e) {
@@ -176,7 +180,8 @@ public class DisplayLocationActivity extends FragmentActivity {
             }catch (JSONException e){
                 System.out.println("JSON EXCEPTION");
                 e.printStackTrace();
-
+                Toast.makeText(getApplicationContext(), "We could not find that location. Try something nearby?",
+                        Toast.LENGTH_SHORT).show();
             }
         }catch(Exception e){
             System.out.print("Unknown Exception");
